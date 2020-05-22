@@ -99,7 +99,7 @@ For output image 2, the bandwidth was manually set to 2. This gave a very large 
 ### Image Watermarking 
 
 
-Embedded a watermark of size 1/8th the original image size in the LL subband of second order DWT. The same image was used for the watermarking operation. Implemented ![this research paper](https://ieeexplore.ieee.org/document/5560822) for performing the task. 
+Embedded a watermark of size 1/8th the original image size in the LL subband of second order DWT. The same image was used for the watermarking operation. Implemented [this research paper](https://ieeexplore.ieee.org/document/5560822) for performing the task. 
 
 
 ![Original Image](/Assets/watermarking.png)
