@@ -2,10 +2,34 @@
 
 The repository contains the implementation of various computer vision algorithms from scratch. 
 
-## Getting Started
+## Introduction
+This repository contains python implementation of the following algorithms from scratch. 
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+  i. CNN implementation using PyTorch. 
+  
+  ii. Classification of Cifar dataset using Alexnet pre-trained model. 
+  
+  iii. Segmentation using the following clustering algorithms: K-means, Seeding, mean-shift. 
+  
+  iv. Camera Clibration using OpenCV
+  
+  v. Implementation of Circular Hough Transformation 
+  
+  vi. Corner Detection 
+  
+  vii. Find matching regions in a image using SIFT features. 
+  
+  viii. Classification of CIFAR dataset using visual bag of words. 
+  
+  ix. Filtering algorithms: Gaussian, Median, etc. 
+  
+  x. Finding disparity maps using OpenCV
+  
+  xi. Image (hidden) Watermarking algorithm 
+  
+  xii. Image stitching to create a panorama. 
+  
 ### Prerequisites
 
 What things you need to install the software and how to install them
