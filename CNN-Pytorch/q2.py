@@ -68,9 +68,6 @@ train = []
 
 for i in range(len(testX)):
 	x = np.transpose(np.reshape(testX[i],(3, 32,32)), (1,2,0))
-	# x = cv2.cvtColor(x, cv2.COLOR_BGR2GRAY)
-	# print x.shape 
-	# x = cv2.resize(x, (x.shape[0]//4, x.shape[1]//4))
 	
 	x = Variable(to_tensor(scaler(x))).unsqueeze(0)
 	output = new_classifier(x)

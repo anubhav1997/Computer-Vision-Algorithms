@@ -29,13 +29,7 @@ for filename in glob.glob('Camera Calibration/*.bmp'):
         corners2 = cv2.cornerSubPix(gray,corners,(11,11),(-1,-1),criteria)
         imgpoints.append(corners2)
 
-        # ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objp, corners2, gray.shape[::-1],None,None)
-        print filename
-        # print 'ret', ret
-        # print 'mtx', mtx
-        # print 'dist', dist
-        # print 'rvecs', rvecs
-        # print 'tvecs', tvecs
+
 
 
 print len(objpoints), len(imgpoints), gray.shape
@@ -61,26 +55,26 @@ print 'Focal Length', focalLength
 print 'Principal point', principalPoint
 print 'aspect ratio', aspectRatio
 
-# img = cv2.imread('Camera Calibration/Left12.bmp')
-# h,  w = img.shape[:2]
-# newcameramtx, roi=cv2.getOptimalNewCameraMatrix(mtx,dist,(w,h),1,(w,h))
+img = cv2.imread('Camera Calibration/Left12.bmp')
+h,  w = img.shape[:2]
+newcameramtx, roi=cv2.getOptimalNewCameraMatrix(mtx,dist,(w,h),1,(w,h))
 
-# # undistort
-# dst = cv2.undistort(img, mtx, dist, None, newcameramtx)
+# undistort
+dst = cv2.undistort(img, mtx, dist, None, newcameramtx)
 
-# # crop the image
-# x,y,w,h = roi
-# dst = dst[y:y+h, x:x+w]
-# cv2.imwrite('calibresult.png',dst)
+# crop the image
+x,y,w,h = roi
+dst = dst[y:y+h, x:x+w]
+cv2.imwrite('calibresult.png',dst)
 
-# # undistort
-# mapx,mapy = cv2.initUndistortRectifyMap(mtx,dist,None,newcameramtx,(w,h),5)
-# dst = cv2.remap(img,mapx,mapy,cv2.INTER_LINEAR)
+# undistort
+mapx,mapy = cv2.initUndistortRectifyMap(mtx,dist,None,newcameramtx,(w,h),5)
+dst = cv2.remap(img,mapx,mapy,cv2.INTER_LINEAR)
 
-# # crop the image
-# x,y,w,h = roi
-# dst = dst[y:y+h, x:x+w]
-# cv2.imwrite('calibresult.png',dst)
+# crop the image
+x,y,w,h = roi
+dst = dst[y:y+h, x:x+w]
+cv2.imwrite('calibresult.png',dst)
 
 
 mean_error = 0

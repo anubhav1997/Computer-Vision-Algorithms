@@ -10,7 +10,6 @@ from torchvision import models
 
 transform1 = transforms.Compose([
     transforms.ToTensor(), # range [0, 255] -> [0.0,1.0]
-#    transforms.Normalize(mean = (0.896, 0.644, 0.854), std = (0.096, 0.204, 0.135))
     ])
 
 images = torch.zeros(9,3,224,224)
@@ -18,7 +17,6 @@ images = torch.zeros(9,3,224,224)
 
 
 for i in range(9):
-#    file_name_curr = 'crop00' + str(i+1) +'.jpg'
     file_name_curr = 'crop00' + str(i+1) +'.jpg'
     img1 = cv2.imread(file_name_curr)
     print 'img',i,img1.shape
@@ -89,5 +87,3 @@ inputs = Variable(images)
 outputs = model(inputs)
 print outputs.data
 print outputs
-# np.savetxt('page1.txt',outputs.data.numpy())
-

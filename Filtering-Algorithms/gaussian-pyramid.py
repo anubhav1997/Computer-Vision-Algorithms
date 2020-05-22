@@ -254,9 +254,6 @@ for m in range(levels):
 
 	cv2.imwrite(('Output/Q4/image_3_gaussian_pyr_%d.jpg'% m), I2)
 	
-	# I = cv2.resize(I2, (0,0), fx=0.5, fy=0.5) 
-	
-	# I3 = cv2.resize(I, (0,0), fx=2, fy=2) 
 
 	I = resize2(I2, (len(I2)//2, len(I2[0])//2, 3))
 

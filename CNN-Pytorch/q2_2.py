@@ -13,22 +13,10 @@ import seaborn as sn
 import pandas as pd 
 
 
-# seed = 42
-# np.random.seed(seed)
-# torch.manual_seed(seed)
-
 # #The compose function allows for multiple transforms
 # #transforms.ToTensor() converts our PILImage to a tensor of shape (C x H x W) in the range [0,1]
 # #transforms.Normalize(mean,std) normalizes a tensor to a (mean, std) for (R, G, B)
 transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
-
-# train_set = torchvision.datasets.CIFAR10(root='./cifardata', train=True, download=True, transform=transform)
-
-# test_set = torchvision.datasets.CIFAR10(root='./cifardata', train=False, download=True, transform=transform)
-
-
-
-
 
 
 # Hyperparameters
@@ -37,16 +25,10 @@ num_classes = 4
 batch_size = 100
 learning_rate = 0.001
 
-# DATA_PATH = 'C:\\Users\Andy\PycharmProjects\MNISTData'
-# MODEL_STORE_PATH = 'C:\\Users\Andy\PycharmProjects\pytorch_models\\'
-
 
 # transforms to apply to the data
 trans = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))])
 
-# # MNIST dataset
-# train_dataset = torchvision.datasets.MNIST(root=DATA_PATH, train=True, transform=trans, download=True)
-# test_dataset = torchvision.datasets.MNIST(root=DATA_PATH, train=False, transform=trans)
 
 train_dataset = torchvision.datasets.CIFAR10(root='./cifardata', train=True, download=True, transform=transform)
 
@@ -56,9 +38,6 @@ test_dataset = torchvision.datasets.CIFAR10(root='./cifardata', train=False, dow
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)
 
-
-# train_dataset = train_dataset[np.where(train_dataset==2 | train_dataset==1 | train_dataset==3 | train_dataset==4)]
-# test_dataset = 
 
 class ConvNet(nn.Module):
     def __init__(self):
@@ -74,10 +53,6 @@ class ConvNet(nn.Module):
         self.layer3 = nn.Sequential(
             nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1),
             nn.ReLU())
-            # nn.MaxPool2d(kernel_size=2, stride=2))
-        
-        # self.drop_out = nn.Dropout()
-        # self.fc1 = nn.Linear(32 * 32 * 64, 1000)
         self.fc1 = nn.Linear(16384, 1000)
         
         self.fc2 = nn.Linear(1000, 4)
@@ -111,10 +86,6 @@ for epoch in range(num_epochs):
     for i, (images, labels) in enumerate(train_loader):
         # Run the forward pass
 
-        # labels = labels.data
-        # print labels, type(labels) 
-        # exit(0)
-
         images = images.numpy()
         labels = labels.numpy()
         l = []
@@ -123,8 +94,6 @@ for epoch in range(num_epochs):
             if(labels[i]==1 or labels[i]==2 or labels[i]==3 or labels[i]==0):
                 l.append(labels[i])
                 I.append(images[i])
-        # images = images[np.argwhere(labels==1 or labels==2 or labels ==3 or labels==4)]
-        # labels = labels[np.argwhere(labels==1 | labels==2 | labels ==3 | labels==4)]
 
         labels = torch.from_numpy(np.array(l))
         images = torch.from_numpy(np.array(I))
@@ -144,7 +113,6 @@ for epoch in range(num_epochs):
         loss_list.append(loss.item())
 
         # Backprop and perform Adam optimisation
-        # optimizer.zero_grad()
         loss.backward()
         optimizer.step()
 
@@ -178,7 +146,6 @@ with torch.no_grad():
             if(labels[i]==1 or labels[i]==2 or labels[i]==3 or labels[i]==0):
                 l.append(labels[i])
                 I.append(images[i])
-                # label.append(labels[i])
 
         
         labels = torch.from_numpy(np.array(l))
@@ -191,13 +158,9 @@ with torch.no_grad():
         if(len(predictions)==0):
             predictions = predicted.numpy()
             label = labels.numpy()
-            # print label.shape
-            # print predictions.shape
         else: 
             predictions = np.append(predictions, predicted.numpy())
             label = np.append(label, labels.numpy())
-            # print labels.shape 
-            # print predictions.shape 
 
         
         correct += (predicted == labels).sum().item()
@@ -215,11 +178,9 @@ from sklearn.metrics import confusion_matrix
 
 conf_matrix = confusion_matrix(label, predictions)
 
-# fig = 
 
 fig = plt.figure(figsize=(7, 7))
 df_cm = pd.DataFrame(conf_matrix, range(4),range(4))
-# plt.figure(figsize = (10,10))
 sn.set(font_scale=1.4) # for label size
 sn.heatmap(df_cm, annot=True, annot_kws={"size": 16}) #font size
 plt.xlabel('True Label')
