@@ -3,7 +3,7 @@
 The repository contains the implementation of various computer vision algorithms from scratch. 
 
 ## Introduction
-This repository contains python implementation of the following algorithms from scratch. 
+- This repository contains python implementation of the following algorithms from scratch. 
 
 
   i. CNN implementation using PyTorch. 
