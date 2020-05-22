@@ -52,7 +52,15 @@ Figure 3: Edges are detected in the image using canny edge detector
 
 Figure 4: Output image after performing circular hough transform using a dynamic theshoding for every radius value. 
 
+
 ### Mean-Shift Clustering 
+
+Bin_seeding was set to TRUE to reduce the computational complexity. The quartile value for output image 1 was set to 0.25. Estimate bandwidth function was used to find the exact bandwidth to be used. The quartile value was grid searched. Moreover the higher quartile brings the value closer to the median of all pairwise distances. This is not required. Thus it was reduced from the standard value of 0.3. 
+
+For output image 2, the bandwidth was manually set to 2. This gave a very large number of cluster centers, in other terms it gave a large number of image color classes. Which is the reason behind it looking similar to the original image. 
+
+
+
 
 
 ### Image Watermarking 
