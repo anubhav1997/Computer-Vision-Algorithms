@@ -52,8 +52,9 @@ Figure 3: Edges are detected in the image using canny edge detector
 
 Figure 4: Output image after performing circular hough transform using a dynamic theshoding for every radius value. 
 
+### Clutering 
 
-### Mean-Shift Clustering 
+#### Mean-Shift Clustering 
 
 Bin_seeding was set to TRUE to reduce the computational complexity. The quartile value for output image 1 was set to 0.25. Estimate bandwidth function was used to find the exact bandwidth to be used. The quartile value was grid searched. Moreover the higher quartile brings the value closer to the median of all pairwise distances. This is not required. Thus it was reduced from the standard value of 0.3. 
 
@@ -65,6 +66,26 @@ For output image 2, the bandwidth was manually set to 2. This gave a very large 
 
 ![Original Image](/Assets/mean-shift-2.png)
 
+#### K-means clutering 
+
+
+##### With a 3D (R,G,B) feature vector  for different number of classes
+
+![Original Image](/Assets/k-means-1.png)
+
+
+
+##### With a 5D (R,G,B,u,v) feature vector  for different number of classes
+
+![Original Image](/Assets/k-means-2.png)
+
+
+#### Seeding clustering and Thesholding Algorithms for Image Segmentation 
+
+![Original Image](/Assets/seeding-1.png)
+
+
+![Original Image](/Assets/seeding-2.png)
 
 
 ### Filtering Algorithms 
