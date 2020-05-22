@@ -39,7 +39,7 @@ The first step is resizing the image to 1/4th of its original size keeping the a
 ![Original Image](/Circular-Hough-transform/Q1.jpeg)
 
 
-![Filtered Image](https://github.com/anubhav1997/Computer-Vision-Algorithms/tree/master/Circular-Hough-transform/filtered.jpg?raw=true)
+![Filtered Image](/Circular-Hough-transform/filtered.jpg?raw=true)
 
 
 ### Mean-Shift Clustering 
