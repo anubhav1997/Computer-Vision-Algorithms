@@ -109,6 +109,11 @@ Embedded a watermark of size 1/8th the original image size in the LL subband of 
 
 ### Image Stitching 
 
+![Original Image](/Assets/image-stitching.png)
+
+Used SIFT to find the keypoint matches between the images. Using these keypoint matches, the homography was calculated. And the images were added together using this homography matrix through which both the images were stitched together to the first one by converting it to the first.   
+
+
 ### Corner Detection 
 
 
@@ -116,6 +121,13 @@ Embedded a watermark of size 1/8th the original image size in the LL subband of 
 
 
 Upon rotation the same threshold gave good results however upon compression by a factor of 2 using bilinear interpolation shows poorer results on the same threshold value. This is because of lower resolution of the image upon compression. Upon increasing the threshold lesser number of points are detected and while lowering the threshold more points are detected and more edges are also classified as a corner. 
+
+### Depth Map 
+
+![Original Image](/Assets/depth-map.png)
+
+Both of the images are first projected to a parallel plane system. We calculate the essential matrix for the two images. Now stereo is used to find the depth of each point based on the difference between the two cameras, the focal length. 
+
 
 
 ### Prerequisites
@@ -142,19 +154,6 @@ And repeat
 until finished
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ### And coding style tests
 
@@ -174,13 +173,6 @@ Add additional notes about how to deploy this on a live system
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## License
 
