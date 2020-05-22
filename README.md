@@ -71,13 +71,13 @@ For output image 2, the bandwidth was manually set to 2. This gave a very large 
 
 ##### With a 3D (R,G,B) feature vector  for different number of classes
 
-![Original Image](/Assets/k-means-1.png)
+![Original Image](/Assets/k-mean-1.png)
 
 
 
 ##### With a 5D (R,G,B,u,v) feature vector  for different number of classes
 
-![Original Image](/Assets/k-means-2.png)
+![Original Image](/Assets/k-mean-2.png)
 
 
 #### Seeding clustering and Thesholding Algorithms for Image Segmentation 
