@@ -37,16 +37,20 @@ The repository contains the implementation of various computer vision algorithms
 The first step is resizing the image to 1/4th of its original size keeping the aspect ratio the same. The is done to speed up the algorithm. The second step is using a gaussian filter and the a canny edge detector on the image. Which finds the edges in the image. Circular hough transform is used with a dynamic threshold for every radius value. The hough transform is only used on locations where an edge is detected. Using this dynamic thresholding approach I was able to detect the inner circles as well.
 
 ![Original Image](/Circular-Hough-transform/Q1.jpeg)
+
 Figure 1: Original Input Image 
 
 ![Filtered Image](/Circular-Hough-transform/filtered.jpg?raw=true)
+
 Figure 2: Image is reduced to 1/8th its original size and filtered using a gaussian filter to remove noise. 
 
 ![Filtered Image](/Circular-Hough-transform/edge.jpg?raw=true)
-Figure 2: Edges are detected in the image using canny edge detector 
+
+Figure 3: Edges are detected in the image using canny edge detector 
 
 ![Filtered Image](/Circular-Hough-transform/Figure_1-1.png?raw=true)
-Figure 2: Output image after performing circular hough transform using a dynamic theshoding for every radius value. 
+
+Figure 4: Output image after performing circular hough transform using a dynamic theshoding for every radius value. 
 
 ### Mean-Shift Clustering 
 
