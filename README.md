@@ -61,11 +61,35 @@ For output image 2, the bandwidth was manually set to 2. This gave a very large 
 
 
 
+![Original Image](/Assets/mean-shift-1.png)
+
+![Original Image](/Assets/mean-shift-2.png)
+
+
+
+### Filtering Algorithms 
+
+
+#### Average Filtering
+
+![Original Image](/Assets/avg-filter.png)
+
+
+#### Gaussian Filtering
+
+![Original Image](/Assets/gaussian-filter.png)
+
+
+#### Median Filtering
+
+![Original Image](/Assets/median-filtering.png)
+
+![Original Image](/Assets/median-1.png)
+
 
 
 ### Image Watermarking 
 
-### Filtering Algorithms 
 
 ### Image Stitching 
 
