@@ -93,6 +93,38 @@ Figure 3: Edges are detected in the image using canny edge detector
 Figure 4: Output image after performing circular hough transform using a dynamic theshoding for every radius value. 
 
 
+### Depth Map 
+
+![Original Image](/Assets/depth-map.png)
+
+Both of the images are first projected to a parallel plane system. We calculate the essential matrix for the two images. Now stereo is used to find the depth of each point based on the difference between the two cameras, the focal length. 
+
+### RANSAC and SIFT Feature Matching
+
+
+![Original Image](/Assets/sift-features.png)
+
+### Building Gaussian Pyramid
+
+
+![Original Image](/Assets/gaussian-pyramid.png)
+
+
+![Original Image](/Assets/laplacian-pyramid.png)
+
+
+
+### Image Watermarking 
+
+
+Embedded a watermark of size 1/8th the original image size in the LL subband of second order DWT. The same image was used for the watermarking operation. Implemented [this research paper](https://ieeexplore.ieee.org/document/5560822) for performing the task. 
+
+
+![Original Image](/Assets/watermarking.png)
+
+
+
+
 ### Filtering Algorithms 
 
 
@@ -114,24 +146,6 @@ Figure 4: Output image after performing circular hough transform using a dynamic
 
 
 
-#### Building Gaussian Pyramid
-
-
-![Original Image](/Assets/gaussian-pyramid.png)
-
-
-![Original Image](/Assets/laplacian-pyramid.png)
-
-
-
-### Image Watermarking 
-
-
-Embedded a watermark of size 1/8th the original image size in the LL subband of second order DWT. The same image was used for the watermarking operation. Implemented [this research paper](https://ieeexplore.ieee.org/document/5560822) for performing the task. 
-
-
-![Original Image](/Assets/watermarking.png)
-
 
 ### Image Stitching 
 
@@ -148,9 +162,5 @@ Used SIFT to find the keypoint matches between the images. Using these keypoint 
 
 Upon rotation the same threshold gave good results however upon compression by a factor of 2 using bilinear interpolation shows poorer results on the same threshold value. This is because of lower resolution of the image upon compression. Upon increasing the threshold lesser number of points are detected and while lowering the threshold more points are detected and more edges are also classified as a corner. 
 
-### Depth Map 
 
-![Original Image](/Assets/depth-map.png)
-
-Both of the images are first projected to a parallel plane system. We calculate the essential matrix for the two images. Now stereo is used to find the depth of each point based on the difference between the two cameras, the focal length. 
 
