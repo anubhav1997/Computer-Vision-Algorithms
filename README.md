@@ -86,6 +86,8 @@ For output image 2, the bandwidth was manually set to 2. This gave a very large 
 
 ![Original Image](/Assets/median-1.png)
 
+
+
 #### Building Gaussian Pyramid
 
 
@@ -107,6 +109,13 @@ Embedded a watermark of size 1/8th the original image size in the LL subband of 
 
 ### Image Stitching 
 
+### Corner Detection 
+
+
+![Original Image](/Assets/corner.png)
+
+
+Upon rotation the same threshold gave good results however upon compression by a factor of 2 using bilinear interpolation shows poorer results on the same threshold value. This is because of lower resolution of the image upon compression. Upon increasing the threshold lesser number of points are detected and while lowering the threshold more points are detected and more edges are also classified as a corner. 
 
 
 ### Prerequisites
